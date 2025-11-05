@@ -40,7 +40,7 @@ if os.getenv("ADMIN_IDS"):
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN пуст. Укажи токен бота в .env")
 
-DB_PATH = "shop.db"
+DB_PATH = os.getenv("DB_PATH", "shop.db")
 INIT_SQL = """\
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY,
